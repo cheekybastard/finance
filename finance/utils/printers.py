@@ -5,7 +5,7 @@
 # See: http://doc.scrapy.org/topics/item-pipeline.html
 import time
 
-from scrapy.utils.python import unicode_to_str
+from w3lib.util import unicode_to_str
 
 _MONTHS = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic"]
 
