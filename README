@@ -1,8 +1,24 @@
-scrapy application for scrape some financial data
+scrapy application for scraping some financial data
 
-requires:
+REQUIRES:
+=========
 
 scrapy (http://scrapy.org)
 w3lib (https://github.com/scrapy/w3lib)
 python-mysql
+
+USAGE:
+======
+
+see scrapy --help
+
+PROJECT COMMANDS:
+=================
+crawldb
+report
+
+EXAMPLES:
+=========
+scrapy crawl $(scrapy list) # crawls everything
+scrapy report # print last scraped/stored data
 
