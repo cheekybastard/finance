@@ -19,6 +19,9 @@ _INDEX_CLASSES = [
 (u"S&P500 Cierre NY", "stock"),
 (u"Soja Futuro NY", "commodity"),
 (u"Uruguay Bond Index", "spread"),
+(u"Ganado en Pie Futuro", "commodity"),
+(u"Trigo futuro (CBT)", "commodity"),
+(u"Plata futuro cierre NY", "commodity"),
 ]
 
 INDEX_NAMES = [x[0] for x in _INDEX_CLASSES]
