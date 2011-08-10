@@ -26,8 +26,8 @@ ITEM_PIPELINES = ['finance.pipelines.PrintIndexes',
 
 SPIDER_SCHEDULER = "scrapy.contrib.spiderscheduler.FifoSpiderScheduler"
 
-MYSQLDB_NAME = "finance"
-MYSQLDB_USER = "finance"
+# MYSQLDB_NAME =
+# MYSQLDB_USER =
 # MYSQLDB_PASS =
 
 # override in environment settings in order to store scraped values
