@@ -34,7 +34,7 @@ MYSQLDB_USER = "finance"
 FINANCEDB_ENABLED = False
 
 try:
-    from local_settings import *
+    from finance.local_settings import *
 except:
     pass
 
