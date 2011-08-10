@@ -7,6 +7,30 @@ scrapy (http://scrapy.org)
 w3lib (https://github.com/scrapy/w3lib)
 python-mysql
 
+INSTALLATION:
+=============
+
+If you want to store scraped data:
+
+1. Create mysql database and grant all privileges on a given user (recommended to create new one for this application)
+
+example:
+
+>> create database finance;
+>> grant all privileges on finance.* to 'finance_user'@'localhost' identified by "financepassword";
+
+(replace finance, finance_user and financepassword by your custom strings)
+
+2. Create database tables by dumping file finance.scheme:
+
+$ mysql -u root -p finance < finance.scheme
+
+3. Create a file local_settings in same place as file settings.py, with mysql settings. In this case its content would be:
+
+MYSQLDB_NAME = "finance"
+MYSQLDB_USER = "finance_user"
+MYSQLDB_PASS = "financepassword"
+
 USAGE:
 ======
 
@@ -14,11 +38,9 @@ see scrapy --help
 
 PROJECT COMMANDS:
 =================
-crawldb
-report
+crawl - crawls data
+list - lists all spiders
+crawldb - crawls and stores in database
+report - prints comparative text reports (scrapy report --help for options)
 
-EXAMPLES:
-=========
-scrapy crawl $(scrapy list) # crawls everything
-scrapy report # print last scraped/stored data
 
