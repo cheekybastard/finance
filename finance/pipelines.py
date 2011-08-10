@@ -8,7 +8,6 @@ import MySQLdb
 from scrapy.xlib.pydispatch import dispatcher
 from scrapy.signals import engine_stopped
 from scrapy.exceptions import NotConfigured
-from scrapy.conf import settings
 
 from finance.items import FinanceIndex, Currency
 from finance.utils.printers import IndexPrinter, GenericPrinter
@@ -40,7 +39,7 @@ class PrintIndexes(object):
         print
 
 class DBPipeline(object):
-    def __init__(self):
+    def __init__(self, settings):
     
         if not settings.getbool("FINANCEDB_ENABLED"):
             raise NotConfigured
@@ -62,3 +61,6 @@ class DBPipeline(object):
         spider.log("Stored: %s" % item["name"])
         return item
 
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler.settings)
