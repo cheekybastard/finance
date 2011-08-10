@@ -10,7 +10,7 @@ class MervalSpider(BaseSpider):
     
     name = "merval.sba.com.ar"
 
-    start_urls = ["http://www.merval.sba.com.ar/"]
+    start_urls = ["http://www.merval.sba.com.ar/default.aspx"]
     
     def parse(self, response):
 
