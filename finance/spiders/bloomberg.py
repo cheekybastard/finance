@@ -86,7 +86,8 @@ class BloombergSpider(BaseSpider):
                 ('CNY', 'Renminbi'),
                 ('JPY', 'Yen'),
                 ('SEK', 'Krona'),
-                ('SGD', 'Singapore Dollar')
+                ('SGD', 'Singapore Dollar'),
+                ('CHF', 'Swiss Franc'),
             ])
             cur_re = re.compile("([A-Z][A-Z][A-Z]):CUR'\] = (\d+\.\d+)")
             for line in lines:
