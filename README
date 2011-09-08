@@ -38,9 +38,8 @@ see scrapy --help
 
 PROJECT COMMANDS:
 =================
-crawl - crawls data
+crawl - crawls data (use option --db for storing in configured database)
 list - lists all spiders
-crawldb - crawls and stores in database
 report - prints comparative text reports (scrapy report --help for options)
 
 
