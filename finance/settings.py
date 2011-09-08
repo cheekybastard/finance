@@ -9,7 +9,7 @@
 # 
 #     scrapy/conf/default_settings.py
 #
-import os
+import os, tempfile
 
 BOT_NAME = 'finance'
 BOT_VERSION = '1.0'
@@ -32,6 +32,9 @@ SPIDER_SCHEDULER = "scrapy.contrib.spiderscheduler.FifoSpiderScheduler"
 
 # override in environment settings in order to store scraped values
 FINANCEDB_ENABLED = False
+
+TEMPDIR = os.path.join(tempfile.gettempdir(), "finance-logs")
+MAX_CRAWLERS = 4
 
 try:
     from finance.local_settings import *
