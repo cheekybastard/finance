@@ -59,7 +59,10 @@ class ScrapyProcessProtocol(protocol.ProcessProtocol):
         self.scraper = scraper
         self.domain = domain
         logdir = os.path.join(settings.get("TEMPDIR"), domain)
-        os.makedirs(logdir)
+        try:
+            os.makedirs(logdir)
+        except OSError:
+            pass
         self.logfile = os.path.join(logdir, time.strftime("%FT%T.log"))
         self.env = self._env()
         self.errdata = ""
@@ -72,6 +75,7 @@ class ScrapyProcessProtocol(protocol.ProcessProtocol):
         env.update({
             'SCRAPY_LOG_FILE': self.logfile,
             'SCRAPY_WEBSERVICE_ENABLED': '0',
+            'SCRAPY_FINANCEDB_ENABLED': str(int(settings.get("FINANCEDB_ENABLED"))), 
         })
         return env
 
