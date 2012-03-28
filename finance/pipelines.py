@@ -14,13 +14,20 @@ from finance.utils.printers import IndexPrinter, GenericPrinter
 
 class PrintIndexes(object):
     
-    def __init__(self):
+    def __init__(self, settings):
+        if not settings.get("ENABLE_PRINTED_REPORT"):
+            raise NotConfigured
+
         dispatcher.connect(self.engine_stopped, engine_stopped)
         self.indexes = IndexPrinter()
         self.bonds = GenericPrinter("%(name)s (%(bondcoupon)s): %(bondprice)s/%(bondyield)s")
         self.currencies = GenericPrinter("%(name)s: %(value)s")
         self.gold_price = None
-        
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler.settings)
+
     def process_item(self, item, spider):
         if isinstance(item, FinanceIndex):
             self.indexes.append(item)

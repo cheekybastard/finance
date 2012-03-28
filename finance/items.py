@@ -60,4 +60,10 @@ class Bond(Item):
     bondprice = Field(output_processor=Compose(takefirst, fixNumber, Decimal))
     bondcoupon = Field(output_processor=Compose(takefirst, fixNumber, Decimal))
 
+class Price(Item):
+
+    name = Field(output_processor=takefirst)
+    code = Field(output_processor=takefirst)
+    value = Field(output_processor=Compose(takefirst, fixNumber, Decimal))
+
 

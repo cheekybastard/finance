@@ -12,16 +12,17 @@ _MONTHS = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct",
 _INDEX_CLASSES = [
 (u"Oro Spot Cierre Londres", "gold"), # this one must be in position 0
 (u"Oro futuro cierre NY", "gold"),
+(u"Plata futuro cierre NY", "commodity"),
 (u"FED effective fund rate", "rate"),
 (u"Tasa Libor 1 Mes", "rate"),
 (u"Tasa Libor 1 Año", "rate"),
-(u"Petroleo WTI Futuro", "commodity"),
 (u"S&P500 Cierre NY", "stock"),
-(u"Soja Futuro NY", "commodity"),
+(u"Merval", "stock"),
 (u"Uruguay Bond Index", "spread"),
+(u"Soja Futuro NY", "commodity"),
+(u"Petroleo WTI Futuro", "commodity"),
 (u"Ganado en Pie Futuro", "commodity"),
 (u"Trigo futuro (CBT)", "commodity"),
-(u"Plata futuro cierre NY", "commodity"),
 ]
 
 INDEX_NAMES = [x[0] for x in _INDEX_CLASSES]

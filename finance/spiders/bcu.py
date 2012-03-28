@@ -17,7 +17,7 @@ class BCUSpider(BaseSpider):
         
         rate.add_value("name", "Tasa Objetivo BCU")
         rate.add_value("unit", "%")
-        rate.add_xpath("value", "8.0")
+        rate.add_xpath("value", "8.75")
         #rate.update_only_if_change = True
         
         return [rate.load_item()]
