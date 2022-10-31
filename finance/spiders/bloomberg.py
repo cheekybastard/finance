@@ -1,10 +1,8 @@
 import re
 from scrapy.spider import BaseSpider
 from scrapy.selector import HtmlXPathSelector
-
 from finance.items import FinanceIndex, Bond, Currency
 from scrapy.contrib.loader import XPathItemLoader
-
 from scrapy.http import Request
 
 _COMMODITIES =  [
