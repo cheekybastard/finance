@@ -1,7 +1,6 @@
 # -*- coding: utf8 -*-
 
 from scrapy.spider import BaseSpider
-
 from finance.items import FinanceIndex
 from scrapy.contrib.loader import XPathItemLoader
 from scrapy.selector import HtmlXPathSelector
